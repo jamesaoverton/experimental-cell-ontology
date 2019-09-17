@@ -46,12 +46,12 @@ ontology:
 # We use the official development version of ROBOT for most things.
 
 build/robot.jar: | build
-	curl -L -o $@ https://github.com/ontodev/robot/releases/download/v1.4.1/robot.jar
+	curl -L -o $@ https://github.com/ontodev/robot/releases/download/v1.4.3/robot.jar
 
 
 ### Ontology Source Tables
 
-tables = imports cells
+tables = dependencies general
 source_files = $(foreach o,$(tables),ontology/$(o).tsv)
 templates = $(foreach i,$(source_files),--template $(i))
 
@@ -59,20 +59,17 @@ templates = $(foreach i,$(source_files),--template $(i))
 #
 # These tables are stored in Google Sheets, and downloaded as TSV files.
 
-ontology/imports.tsv: | ontology
-	curl -L -o $@ "https://docs.google.com/spreadsheets/d/1IWWyvZorh3vR_BocJh3pzWe4EcYB2HPai2MWckvDJ-A/export?format=tsv&id=1IWWyvZorh3vR_BocJh3pzWe4EcYB2HPai2MWckvDJ-A&gid=0"
+build/XCL_Template.xlsx: | build
+	curl -L -o $@ "https://docs.google.com/spreadsheets/d/1Ja1IYLWygg3k-beGPRg_uza_8-FPBLzF90WbHkbCi4Q/export?format=xlsx"
 
-ontology/cells.tsv: | ontology
-	curl -L -o $@ "https://docs.google.com/spreadsheets/d/1IWWyvZorh3vR_BocJh3pzWe4EcYB2HPai2MWckvDJ-A/export?format=tsv&id=1IWWyvZorh3vR_BocJh3pzWe4EcYB2HPai2MWckvDJ-A&gid=691605019"
-
-.PHONY: update-tsv
-update-tsv: ontology/imports.tsv ontology/cells.tsv
-
+ontology/%.tsv: src/xlsx2tsv.py build/XCL_Template.xlsx
+	python3 $^ $* > $@
 
 # TODO: Fix XCL prefix
-xcl.owl: $(source_files) | build/robot.jar
+xcl.owl: ontology/metadata.ttl $(source_files) | build/robot.jar
 	$(ROBOT) template \
-		--prefix "XCL: http://example.com/XCL_" \
+	--prefix "XCL: http://example.com/XCL_" \
+	--input $< \
 	$(templates) \
 	--output $@
 
