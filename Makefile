@@ -51,7 +51,7 @@ build/robot.jar: | build
 
 ### Ontology Source Tables
 
-tables = dependencies general
+tables = dependencies general human mouse
 source_files = $(foreach o,$(tables),ontology/$(o).tsv)
 templates = $(foreach i,$(source_files),--template $(i))
 
@@ -73,6 +73,12 @@ xcl.owl: ontology/metadata.ttl $(source_files) | build/robot.jar
 	$(templates) \
 	--output $@
 
+.PHONY: update
+update: clean-data xcl.owl
+
+.PHONY: clean-data
+clean-data:
+	rm -f xcl.owl build/XCL_Template.xlsx $(source_files)
 
 .PHONY: clean
 clean:

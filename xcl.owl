@@ -231,6 +231,70 @@
     
 
 
+    <!-- http://example.com/XCL_H1 -->
+
+    <Class rdf:about="http://example.com/XCL_H1">
+        <equivalentClass>
+            <Class>
+                <intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_0000000"/>
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
+                </intersectionOf>
+            </Class>
+        </equivalentClass>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">human cell</rdfs:label>
+    </Class>
+    
+
+
+    <!-- http://example.com/XCL_H2 -->
+
+    <Class rdf:about="http://example.com/XCL_H2">
+        <equivalentClass>
+            <Class>
+                <intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_0000542"/>
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
+                </intersectionOf>
+            </Class>
+        </equivalentClass>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">human lymphocyte</rdfs:label>
+    </Class>
+    
+
+
+    <!-- http://example.com/XCL_M1 -->
+
+    <Class rdf:about="http://example.com/XCL_M1">
+        <equivalentClass>
+            <Class>
+                <intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_0000000"/>
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_10090"/>
+                </intersectionOf>
+            </Class>
+        </equivalentClass>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">mouse cell</rdfs:label>
+    </Class>
+    
+
+
+    <!-- http://example.com/XCL_M2 -->
+
+    <Class rdf:about="http://example.com/XCL_M2">
+        <equivalentClass>
+            <Class>
+                <intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_0000542"/>
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_10090"/>
+                </intersectionOf>
+            </Class>
+        </equivalentClass>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">mouse lymphocyte</rdfs:label>
+    </Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/CL_0000000 -->
 
     <Class rdf:about="http://purl.obolibrary.org/obo/CL_0000000">
