@@ -144,6 +144,15 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/RO_0002160 -->
+
+    <ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002160">
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002162"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">only in taxon</rdfs:label>
+    </ObjectProperty>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/RO_0002162 -->
 
     <ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002162">
@@ -238,7 +247,10 @@
             <Class>
                 <intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_0000000"/>
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
+                    <Restriction>
+                        <onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002160"/>
+                        <someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
+                    </Restriction>
                 </intersectionOf>
             </Class>
         </equivalentClass>
@@ -254,7 +266,10 @@
             <Class>
                 <intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_0000542"/>
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
+                    <Restriction>
+                        <onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002160"/>
+                        <someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
+                    </Restriction>
                 </intersectionOf>
             </Class>
         </equivalentClass>
@@ -270,7 +285,10 @@
             <Class>
                 <intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_0000000"/>
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_10090"/>
+                    <Restriction>
+                        <onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002160"/>
+                        <someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_10090"/>
+                    </Restriction>
                 </intersectionOf>
             </Class>
         </equivalentClass>
@@ -286,7 +304,10 @@
             <Class>
                 <intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_0000542"/>
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_10090"/>
+                    <Restriction>
+                        <onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002160"/>
+                        <someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_10090"/>
+                    </Restriction>
                 </intersectionOf>
             </Class>
         </equivalentClass>
@@ -1168,6 +1189,10 @@
                 <intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_0000824"/>
                     <Restriction>
+                        <onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002160"/>
+                        <someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_10090"/>
+                    </Restriction>
+                    <Restriction>
                         <onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002215"/>
                         <someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0032609"/>
                     </Restriction>
@@ -1213,6 +1238,10 @@
                 <intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_0000824"/>
                     <Restriction>
+                        <onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002160"/>
+                        <someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_10090"/>
+                    </Restriction>
+                    <Restriction>
                         <onProperty rdf:resource="http://purl.obolibrary.org/obo/cl#has_high_plasma_membrane_amount"/>
                         <someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PR_000001012"/>
                     </Restriction>
@@ -1253,6 +1282,10 @@
             <Class>
                 <intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_0000824"/>
+                    <Restriction>
+                        <onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002160"/>
+                        <someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_10090"/>
+                    </Restriction>
                     <Restriction>
                         <onProperty rdf:resource="http://purl.obolibrary.org/obo/cl#has_high_plasma_membrane_amount"/>
                         <someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PR_000001963"/>
@@ -1302,6 +1335,10 @@
                         <onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002104"/>
                         <someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PR_000001963"/>
                     </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002160"/>
+                        <someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_10090"/>
+                    </Restriction>
                 </intersectionOf>
             </Class>
         </equivalentClass>
@@ -1332,6 +1369,10 @@
                     <Restriction>
                         <onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002104"/>
                         <someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PR_000002977"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002160"/>
+                        <someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_10090"/>
                     </Restriction>
                 </intersectionOf>
             </Class>
@@ -1365,6 +1406,10 @@
                         <onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002104"/>
                         <someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PR_000002023"/>
                     </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002160"/>
+                        <someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_10090"/>
+                    </Restriction>
                 </intersectionOf>
             </Class>
         </equivalentClass>
@@ -1395,6 +1440,10 @@
                     <Restriction>
                         <onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002104"/>
                         <someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PR_000009619"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002160"/>
+                        <someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_10090"/>
                     </Restriction>
                 </intersectionOf>
             </Class>
@@ -1427,6 +1476,10 @@
                         <onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002104"/>
                         <someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PR_000001402"/>
                     </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002160"/>
+                        <someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_10090"/>
+                    </Restriction>
                 </intersectionOf>
             </Class>
         </equivalentClass>
@@ -1454,6 +1507,10 @@
             <Class>
                 <intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_0000623"/>
+                    <Restriction>
+                        <onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002160"/>
+                        <someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_10090"/>
+                    </Restriction>
                     <Restriction>
                         <onProperty rdf:resource="http://purl.obolibrary.org/obo/cl#lacks_plasma_membrane_part"/>
                         <someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PR_000001402"/>
@@ -1495,6 +1552,10 @@
                         <onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002104"/>
                         <someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PR_000009618"/>
                     </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002160"/>
+                        <someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_10090"/>
+                    </Restriction>
                 </intersectionOf>
             </Class>
         </equivalentClass>
@@ -1527,6 +1588,10 @@
                         <onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002104"/>
                         <someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PR_000009623"/>
                     </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002160"/>
+                        <someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_10090"/>
+                    </Restriction>
                 </intersectionOf>
             </Class>
         </equivalentClass>
@@ -1554,6 +1619,10 @@
             <Class>
                 <intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_0002438"/>
+                    <Restriction>
+                        <onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002160"/>
+                        <someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_10090"/>
+                    </Restriction>
                     <Restriction>
                         <onProperty rdf:resource="http://purl.obolibrary.org/obo/cl#lacks_plasma_membrane_part"/>
                         <someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PR_000009619"/>
@@ -1585,6 +1654,10 @@
             <Class>
                 <intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_0002438"/>
+                    <Restriction>
+                        <onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002160"/>
+                        <someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_10090"/>
+                    </Restriction>
                     <Restriction>
                         <onProperty rdf:resource="http://purl.obolibrary.org/obo/cl#lacks_plasma_membrane_part"/>
                         <someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PR_000009618"/>
@@ -1618,6 +1691,10 @@
                 <intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_0002438"/>
                     <Restriction>
+                        <onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002160"/>
+                        <someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_10090"/>
+                    </Restriction>
+                    <Restriction>
                         <onProperty rdf:resource="http://purl.obolibrary.org/obo/cl#lacks_plasma_membrane_part"/>
                         <someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PR_000001402"/>
                     </Restriction>
@@ -1648,6 +1725,10 @@
             <Class>
                 <intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_0002438"/>
+                    <Restriction>
+                        <onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002160"/>
+                        <someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_10090"/>
+                    </Restriction>
                     <Restriction>
                         <onProperty rdf:resource="http://purl.obolibrary.org/obo/cl#lacks_plasma_membrane_part"/>
                         <someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PR_000009623"/>
@@ -1686,6 +1767,10 @@
                     <Restriction>
                         <onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002104"/>
                         <someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PR_000009618"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002160"/>
+                        <someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_10090"/>
                     </Restriction>
                 </intersectionOf>
             </Class>

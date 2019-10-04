@@ -29,16 +29,16 @@ for row in ws:
 
   if args.sheet == 'human':
     if rownum == 1:
-      values.insert(colnum, 'In Taxon')
+      values.insert(colnum, 'Only In Taxon')
     elif rownum == 2:
-      values.insert(colnum, 'C %')
+      values.insert(colnum, "C 'only in taxon' some %")
     else:
       values.insert(colnum, 'Homo sapiens')
   elif args.sheet == 'mouse':
     if rownum == 1:
-      values.insert(colnum, 'In Taxon')
+      values.insert(colnum, 'Only In Taxon')
     elif rownum == 2:
-      values.insert(colnum, 'C %')
+      values.insert(colnum, "C 'only in taxon' some %")
     else:
       values.insert(colnum, 'Mus musculus')
 

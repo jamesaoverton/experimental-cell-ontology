@@ -17,6 +17,7 @@ RO:0000053	bearer of	owl:ObjectProperty
 RO:0001025	located in	owl:ObjectProperty		
 RO:0002202	develops from	owl:ObjectProperty		
 RO:0002162	in taxon	owl:ObjectProperty		
+RO:0002160	only in taxon	owl:ObjectProperty		in taxon
 RO:0002215	capable of	owl:ObjectProperty		
 http://purl.obolibrary.org/obo/cl#lacks_part	lacks part	owl:ObjectProperty		
 NCBITaxon:2759	Eukaryota	owl:Class		
