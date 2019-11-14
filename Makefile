@@ -65,6 +65,16 @@ build/XCL_Template.xlsx: | build
 ontology/%.tsv: src/xlsx2tsv.py build/XCL_Template.xlsx
 	python3 $^ $* > $@
 
+build/cl.owl:
+	curl -L -o $@ "http://purl.obolibrary.org/obo/cl.owl"
+
+build/ancestors.owl: build/cl.owl build/general.txt | build/robot.jar
+	$(ROBOT) extract \
+	--method STAR \
+	--input $< \
+	--term "CL:0000542" \
+	--output $@
+
 # TODO: Fix XCL prefix
 xcl.owl: ontology/metadata.ttl $(source_files) | build/robot.jar
 	$(ROBOT) template \
