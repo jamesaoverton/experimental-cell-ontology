@@ -68,11 +68,13 @@ ontology/%.tsv: src/xlsx2tsv.py build/XCL_Template.xlsx
 build/cl.owl:
 	curl -L -o $@ "http://purl.obolibrary.org/obo/cl.owl"
 
-build/ancestors.owl: build/cl.owl | build/robot.jar
+build/ancestors.owl: build/cl.owl xcl.owl | build/robot.jar
 	$(ROBOT) extract \
 	--method STAR \
 	--input $< \
 	--term "CL:0000542" \
+	merge \
+	--input $(word 2,$^) \
 	--output $@
 
 # TODO: Fix XCL prefix
