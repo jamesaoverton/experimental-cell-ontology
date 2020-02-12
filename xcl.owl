@@ -254,6 +254,7 @@
                 </intersectionOf>
             </Class>
         </equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000000"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">human cell</rdfs:label>
     </Class>
     
@@ -273,6 +274,8 @@
                 </intersectionOf>
             </Class>
         </equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://example.com/XCL_H1"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000542"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">human lymphocyte</rdfs:label>
     </Class>
     
@@ -292,6 +295,7 @@
                 </intersectionOf>
             </Class>
         </equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000000"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">mouse cell</rdfs:label>
     </Class>
     
@@ -311,6 +315,8 @@
                 </intersectionOf>
             </Class>
         </equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://example.com/XCL_M1"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000542"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">mouse lymphocyte</rdfs:label>
     </Class>
     
@@ -319,6 +325,7 @@
     <!-- http://purl.obolibrary.org/obo/CL_0000000 -->
 
     <Class rdf:about="http://purl.obolibrary.org/obo/CL_0000000">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cell</rdfs:label>
     </Class>
     
@@ -367,6 +374,7 @@
                 </intersectionOf>
             </Class>
         </equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0001067"/>
         <rdfs:subClassOf>
             <Restriction>
                 <onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002202"/>
@@ -411,6 +419,8 @@
                 </intersectionOf>
             </Class>
         </equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000623"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0001082"/>
         <rdfs:subClassOf>
             <Restriction>
                 <onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002202"/>
@@ -454,8 +464,6 @@
                 <someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CL_0000823"/>
             </Restriction>
         </rdfs:subClassOf>
-        <disjointWith rdf:resource="http://purl.obolibrary.org/obo/CL_0002338"/>
-        <disjointWith rdf:resource="http://purl.obolibrary.org/obo/CL_0002344"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A natural killer cell that is developmentally mature and expresses a variety of inhibitory and activating receptors that recognize MHC class I and other stress related molecules.</obo:IAO_0000115>
         <oboInOwl:has_broad_synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LAK cell</oboInOwl:has_broad_synonym>
         <oboInOwl:has_broad_synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">lymphokine activated killer cell</oboInOwl:has_broad_synonym>
@@ -518,6 +526,7 @@
                 </intersectionOf>
             </Class>
         </equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000623"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cell committed to natural killer cell lineage that has the phenotype CD122-positive, CD34-positive, and CD117-positive. This cell type lacks expression of natural killer receptor proteins.</obo:IAO_0000115>
         <oboInOwl:has_exact_synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pre-NK cell</oboInOwl:has_exact_synonym>
         <oboInOwl:has_obo_namespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cell</oboInOwl:has_obo_namespace>
@@ -551,6 +560,10 @@
                         <someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PR_000001319"/>
                     </Restriction>
                     <Restriction>
+                        <onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002160"/>
+                        <someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
+                    </Restriction>
+                    <Restriction>
                         <onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002215"/>
                         <someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0032609"/>
                     </Restriction>
@@ -569,6 +582,8 @@
                 </intersectionOf>
             </Class>
         </equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://example.com/XCL_H2"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000824"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NK cell that has the phenotype CD56-bright, CD16-negative, and CD84-positive with the function to secrete interferon-gamma but is not cytotoxic.</obo:IAO_0000115>
         <oboInOwl:has_exact_synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CD16-CD56bright NK cell</oboInOwl:has_exact_synonym>
         <oboInOwl:has_exact_synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CD16-negative, CD56-bright NK cell</oboInOwl:has_exact_synonym>
@@ -610,6 +625,10 @@
                         <someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PR_000001483"/>
                     </Restriction>
                     <Restriction>
+                        <onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002160"/>
+                        <someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
+                    </Restriction>
+                    <Restriction>
                         <onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002215"/>
                         <someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0001816"/>
                     </Restriction>
@@ -628,6 +647,8 @@
                 </intersectionOf>
             </Class>
         </equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://example.com/XCL_H2"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000824"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A mature natural killer cell that has the phenotype CD56-low, CD16-positive and which is capable of cytotoxicity and cytokine production.</obo:IAO_0000115>
         <oboInOwl:has_exact_synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CD16+CD56+ NK cell</oboInOwl:has_exact_synonym>
         <oboInOwl:has_exact_synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CD16-positive, CD56-dim NK cell</oboInOwl:has_exact_synonym>
@@ -686,6 +707,7 @@
                 </intersectionOf>
             </Class>
         </equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000542"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A lymphocyte that lacks characteristic T cell, B cell, myeloid cell, and dendritic cell markers, that functions as part of the innate immune response to produce cytokines and other effector responses.</obo:IAO_0000115>
         <terms:creator rdf:resource="http://orcid.org/0000-0001-9990-8331"/>
         <terms:date rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2017-01-30T20:20:48Z</terms:date>
@@ -718,6 +740,7 @@
                 </intersectionOf>
             </Class>
         </equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0001065"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An innate lymphoid cell that is capable of producing the type 1 cytokine IFN-gamma, but not Th2 or Th17 cell-associated cytokines.</obo:IAO_0000115>
         <terms:creator rdf:resource="http://orcid.org/0000-0001-9990-8331"/>
         <terms:date rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2017-01-30T20:42:44Z</terms:date>
@@ -753,6 +776,7 @@
                 </intersectionOf>
             </Class>
         </equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0001067"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A group 1 innate lymphoid cell that is non-cytotoxic.</obo:IAO_0000115>
         <terms:creator rdf:resource="http://orcid.org/0000-0001-9990-8331"/>
         <terms:date rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2017-01-30T20:54:12Z</terms:date>
@@ -785,6 +809,7 @@
                 </intersectionOf>
             </Class>
         </equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0001065"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An innate lymphoid cell that is capable of producing T-helper 2-cell associated cytokines upon stimulation.</obo:IAO_0000115>
         <terms:creator rdf:resource="http://orcid.org/0000-0001-9990-8331"/>
         <terms:date rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2017-01-30T21:20:08Z</terms:date>
@@ -819,6 +844,7 @@
                 </intersectionOf>
             </Class>
         </equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0001065"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An innate lymphoid cell that constituitively expresses RORgt and is capable of expressing IL17A and/or IL-22.</obo:IAO_0000115>
         <terms:creator rdf:resource="http://orcid.org/0000-0001-9990-8331"/>
         <terms:date rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2017-01-31T20:21:26Z</terms:date>
@@ -834,6 +860,445 @@
         <oboInOwl:database_cross_reference rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GOC:dsd</oboInOwl:database_cross_reference>
         <oboInOwl:database_cross_reference rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:23292121</oboInOwl:database_cross_reference>
         <oboInOwl:database_cross_reference rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:23348417</oboInOwl:database_cross_reference>
+    </Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CL_0001072 -->
+
+    <Class rdf:about="http://purl.obolibrary.org/obo/CL_0001072">
+        <equivalentClass>
+            <Class>
+                <intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_0001065"/>
+                    <Restriction>
+                        <onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000053"/>
+                        <someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PATO_0001501"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002104"/>
+                        <someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PR_P10721"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002160"/>
+                        <someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="http://purl.obolibrary.org/obo/cl#lacks_plasma_membrane_part"/>
+                        <someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PR_P28906"/>
+                    </Restriction>
+                </intersectionOf>
+            </Class>
+        </equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://example.com/XCL_H2"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0001082"/>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002202"/>
+                <someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CL_0001074"/>
+            </Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An innate lymphoid cell in the human with the phenotype CD34-negative, CD117-positive, and a precusor to NK cells, ILC2 cells, and ILC3 cells.</obo:IAO_0000115>
+        <oboInOwl:has_exact_synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CD34-negative, CD117-positive ILC</oboInOwl:has_exact_synonym>
+        <oboInOwl:has_exact_synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CD34-negative, CD117-positive ILCP</oboInOwl:has_exact_synonym>
+        <oboInOwl:has_exact_synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CD34-negative, CD117-positive innate lymphoid cell precusor</oboInOwl:has_exact_synonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CD34-negative, CD117-positive innate lymphoid cell</rdfs:label>
+    </Class>
+    <Axiom>
+        <annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_0001072"/>
+        <annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An innate lymphoid cell in the human with the phenotype CD34-negative, CD117-positive, and a precusor to NK cells, ILC2 cells, and ILC3 cells.</annotatedTarget>
+        <oboInOwl:database_cross_reference rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GOC:add</oboInOwl:database_cross_reference>
+        <oboInOwl:database_cross_reference rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:30193847</oboInOwl:database_cross_reference>
+        <oboInOwl:database_cross_reference rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:31201208</oboInOwl:database_cross_reference>
+    </Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CL_0001073 -->
+
+    <Class rdf:about="http://purl.obolibrary.org/obo/CL_0001073">
+        <equivalentClass>
+            <Class>
+                <intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_0001072"/>
+                    <Restriction>
+                        <onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002104"/>
+                        <someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PR_P10721"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002104"/>
+                        <someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PR_P13591"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002160"/>
+                        <someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
+                    </Restriction>
+                </intersectionOf>
+            </Class>
+        </equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0001072"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An innate lymphoid cell in the human with the phenotype CD34-negative, CD56-positive, CD117-positive.Thie cell type may include precusors to NK cells and ILC3 cells.</obo:IAO_0000115>
+        <oboInOwl:has_exact_synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CD34-negative, CD56-positive, CD117-positive ILC</oboInOwl:has_exact_synonym>
+        <oboInOwl:has_exact_synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CD34-negative, CD56-positive, CD117-positive ILCP</oboInOwl:has_exact_synonym>
+        <oboInOwl:has_exact_synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CD34-negative, CD56-positive, CD117-positive innate lymphoid cell precursor</oboInOwl:has_exact_synonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CD34-negative, CD56-positive, CD117-positive innate lymphoid cell</rdfs:label>
+    </Class>
+    <Axiom>
+        <annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_0001073"/>
+        <annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An innate lymphoid cell in the human with the phenotype CD34-negative, CD56-positive, CD117-positive.Thie cell type may include precusors to NK cells and ILC3 cells.</annotatedTarget>
+        <oboInOwl:database_cross_reference rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GOC:add</oboInOwl:database_cross_reference>
+        <oboInOwl:database_cross_reference rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:30193847</oboInOwl:database_cross_reference>
+        <oboInOwl:database_cross_reference rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:31201208</oboInOwl:database_cross_reference>
+    </Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CL_0001074 -->
+
+    <Class rdf:about="http://purl.obolibrary.org/obo/CL_0001074">
+        <equivalentClass>
+            <Class>
+                <intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_0001065"/>
+                    <Restriction>
+                        <onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000053"/>
+                        <someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PATO_0001501"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002104"/>
+                        <someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PR_P10721"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002104"/>
+                        <someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PR_P13591"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002104"/>
+                        <someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PR_P28906"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002160"/>
+                        <someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
+                    </Restriction>
+                </intersectionOf>
+            </Class>
+        </equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://example.com/XCL_H2"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0001082"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An innate lymphoid cell precursor in the human with the phenotype CD34-positive, CD56-positive, CD117-positive.Thie cell type may include precusors to NK cells and ILC3 cells.</obo:IAO_0000115>
+        <oboInOwl:has_exact_synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CD34-positive, CD56-positive, CD117-positive CILP</oboInOwl:has_exact_synonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CD34-positive, CD56-positive, CD117-positive common innate lymphoid precursor</rdfs:label>
+    </Class>
+    <Axiom>
+        <annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_0001074"/>
+        <annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An innate lymphoid cell precursor in the human with the phenotype CD34-positive, CD56-positive, CD117-positive.Thie cell type may include precusors to NK cells and ILC3 cells.</annotatedTarget>
+        <oboInOwl:database_cross_reference rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GOC:add</oboInOwl:database_cross_reference>
+        <oboInOwl:database_cross_reference rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:30193847</oboInOwl:database_cross_reference>
+    </Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CL_0001075 -->
+
+    <Class rdf:about="http://purl.obolibrary.org/obo/CL_0001075">
+        <equivalentClass>
+            <Class>
+                <intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_0001072"/>
+                    <Restriction>
+                        <onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002104"/>
+                        <someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PR_Q96E93"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002160"/>
+                        <someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
+                    </Restriction>
+                </intersectionOf>
+            </Class>
+        </equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0001072"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An innate lymphoid cell in the human with the phenotype KLRG1-positive that is a precusor for ILC2 cells.</obo:IAO_0000115>
+        <oboInOwl:has_exact_synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">KLRG1-positive ILC</oboInOwl:has_exact_synonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">KLRG1-positive innate lymphoid cell</rdfs:label>
+    </Class>
+    <Axiom>
+        <annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_0001075"/>
+        <annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An innate lymphoid cell in the human with the phenotype KLRG1-positive that is a precusor for ILC2 cells.</annotatedTarget>
+        <oboInOwl:database_cross_reference rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GOC:add</oboInOwl:database_cross_reference>
+        <oboInOwl:database_cross_reference rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:31201208</oboInOwl:database_cross_reference>
+    </Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CL_0001076 -->
+
+    <Class rdf:about="http://purl.obolibrary.org/obo/CL_0001076">
+        <equivalentClass>
+            <Class>
+                <intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_0001074"/>
+                    <Restriction>
+                        <onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002104"/>
+                        <someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PR_O76036"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002160"/>
+                        <someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
+                    </Restriction>
+                </intersectionOf>
+            </Class>
+        </equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0001074"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An innate lymphoid cell in the human with the phenotype NKp46-positive that is a precusor for NK cells and ILC3 cells.</obo:IAO_0000115>
+        <oboInOwl:has_exact_synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NKp46-positive ILC</oboInOwl:has_exact_synonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NKp46-positive innate lymphoid cell</rdfs:label>
+    </Class>
+    <Axiom>
+        <annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_0001076"/>
+        <annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An innate lymphoid cell in the human with the phenotype NKp46-positive that is a precusor for NK cells and ILC3 cells.</annotatedTarget>
+        <oboInOwl:database_cross_reference rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GOC:add</oboInOwl:database_cross_reference>
+        <oboInOwl:database_cross_reference rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:31201208</oboInOwl:database_cross_reference>
+        <oboInOwl:database_cross_reference rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:31337734</oboInOwl:database_cross_reference>
+    </Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CL_0001077 -->
+
+    <Class rdf:about="http://purl.obolibrary.org/obo/CL_0001077">
+        <equivalentClass>
+            <Class>
+                <intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_0001068"/>
+                    <Restriction>
+                        <onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                        <someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PR_Q9UL17"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002104"/>
+                        <someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PR_P16871"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002160"/>
+                        <someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
+                    </Restriction>
+                </intersectionOf>
+            </Class>
+        </equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://example.com/XCL_H2"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0001068"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An ILC1 cell in the human with the phenotype CD56-negative, IL-7Ralpha-positive, T-bet-positive.</obo:IAO_0000115>
+        <oboInOwl:has_exact_synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">innate lymphoid cell 1, human</oboInOwl:has_exact_synonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ILC1, human</rdfs:label>
+    </Class>
+    <Axiom>
+        <annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_0001077"/>
+        <annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An ILC1 cell in the human with the phenotype CD56-negative, IL-7Ralpha-positive, T-bet-positive.</annotatedTarget>
+        <oboInOwl:database_cross_reference rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GOC:add</oboInOwl:database_cross_reference>
+        <oboInOwl:database_cross_reference rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:31500958</oboInOwl:database_cross_reference>
+    </Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CL_0001078 -->
+
+    <Class rdf:about="http://purl.obolibrary.org/obo/CL_0001078">
+        <equivalentClass>
+            <Class>
+                <intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_0001071"/>
+                    <Restriction>
+                        <onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002104"/>
+                        <someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PR_P16871"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002104"/>
+                        <someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PR_Q07108"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002160"/>
+                        <someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
+                    </Restriction>
+                </intersectionOf>
+            </Class>
+        </equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://example.com/XCL_H2"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0001071"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A group 3 innate lymphoid cell in the human with the phenotype IL-7Ralpha-positive and CD69-positive.</obo:IAO_0000115>
+        <oboInOwl:has_exact_synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ILC3, human</oboInOwl:has_exact_synonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">group 3 innate lymphoid cell, human</rdfs:label>
+    </Class>
+    <Axiom>
+        <annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_0001078"/>
+        <annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A group 3 innate lymphoid cell in the human with the phenotype IL-7Ralpha-positive and CD69-positive.</annotatedTarget>
+        <oboInOwl:database_cross_reference rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GOC:add</oboInOwl:database_cross_reference>
+        <oboInOwl:database_cross_reference rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:31500958</oboInOwl:database_cross_reference>
+    </Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CL_0001079 -->
+
+    <Class rdf:about="http://purl.obolibrary.org/obo/CL_0001079">
+        <equivalentClass>
+            <Class>
+                <intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_0001071"/>
+                    <Restriction>
+                        <onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002104"/>
+                        <someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PR_O95944"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002104"/>
+                        <someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PR_P16871"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002104"/>
+                        <someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PR_Q07108"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002160"/>
+                        <someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
+                    </Restriction>
+                </intersectionOf>
+            </Class>
+        </equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0001078"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A group 3 innate lymphoid cell in the human with the phenotype IL-7Ralpha-positive, CD69-positive, and NKp44-positive.</obo:IAO_0000115>
+        <oboInOwl:has_exact_synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ILC3, human</oboInOwl:has_exact_synonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NKp44-positive group 3 innate lymphoid cell, human</rdfs:label>
+    </Class>
+    <Axiom>
+        <annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_0001079"/>
+        <annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A group 3 innate lymphoid cell in the human with the phenotype IL-7Ralpha-positive, CD69-positive, and NKp44-positive.</annotatedTarget>
+        <oboInOwl:database_cross_reference rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GOC:add</oboInOwl:database_cross_reference>
+        <oboInOwl:database_cross_reference rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:24778151</oboInOwl:database_cross_reference>
+        <oboInOwl:database_cross_reference rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:31500958</oboInOwl:database_cross_reference>
+    </Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CL_0001080 -->
+
+    <Class rdf:about="http://purl.obolibrary.org/obo/CL_0001080">
+        <equivalentClass>
+            <Class>
+                <intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_0001071"/>
+                    <Restriction>
+                        <onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002104"/>
+                        <someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PR_P16871"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002104"/>
+                        <someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PR_Q07108"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002160"/>
+                        <someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="http://purl.obolibrary.org/obo/cl#lacks_plasma_membrane_part"/>
+                        <someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PR_O95944"/>
+                    </Restriction>
+                </intersectionOf>
+            </Class>
+        </equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0001078"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A group 3 innate lymphoid cell in the human with the phenotype IL-7Ralpha-positive, CD69-positive, and NKp44-negative.</obo:IAO_0000115>
+        <oboInOwl:has_exact_synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ILC3, human</oboInOwl:has_exact_synonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NKp44-negative group 3 innate lymphoid cell, human</rdfs:label>
+    </Class>
+    <Axiom>
+        <annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_0001080"/>
+        <annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A group 3 innate lymphoid cell in the human with the phenotype IL-7Ralpha-positive, CD69-positive, and NKp44-negative.</annotatedTarget>
+        <oboInOwl:database_cross_reference rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GOC:add</oboInOwl:database_cross_reference>
+        <oboInOwl:database_cross_reference rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:24778151</oboInOwl:database_cross_reference>
+        <oboInOwl:database_cross_reference rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:31500958</oboInOwl:database_cross_reference>
+    </Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CL_0001081 -->
+
+    <Class rdf:about="http://purl.obolibrary.org/obo/CL_0001081">
+        <equivalentClass>
+            <Class>
+                <intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_0001069"/>
+                    <Restriction>
+                        <onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                        <someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PR_P23771"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002104"/>
+                        <someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PR_P01589"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002104"/>
+                        <someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PR_P16871"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002104"/>
+                        <someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PR_Q12918"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002160"/>
+                        <someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
+                    </Restriction>
+                </intersectionOf>
+            </Class>
+        </equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://example.com/XCL_H2"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0001069"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A group 2 innate lymphoid cell in the human with the phenotype CD25-positive, CD127-positive, CD161-positive, and GATA-3-positive.</obo:IAO_0000115>
+        <oboInOwl:has_exact_synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ILC2, human</oboInOwl:has_exact_synonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">group 2 innate lymphoid cell, human</rdfs:label>
+    </Class>
+    <Axiom>
+        <annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_0001081"/>
+        <annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A group 2 innate lymphoid cell in the human with the phenotype CD25-positive, CD127-positive, CD161-positive, and GATA-3-positive.</annotatedTarget>
+        <oboInOwl:database_cross_reference rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GOC:add</oboInOwl:database_cross_reference>
+        <oboInOwl:database_cross_reference rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:24778151</oboInOwl:database_cross_reference>
+        <oboInOwl:database_cross_reference rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:26844414</oboInOwl:database_cross_reference>
+    </Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CL_0001082 -->
+
+    <Class rdf:about="http://purl.obolibrary.org/obo/CL_0001082">
+        <equivalentClass>
+            <Class>
+                <intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_0001065"/>
+                    <Restriction>
+                        <onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000053"/>
+                        <someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PATO_0001501"/>
+                    </Restriction>
+                </intersectionOf>
+            </Class>
+        </equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0001065"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An innate lyphoid cell with an immature phenotype.</obo:IAO_0000115>
+        <oboInOwl:has_exact_synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">immature ILC</oboInOwl:has_exact_synonym>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">immature innate lymphoid cell</rdfs:label>
+    </Class>
+    <Axiom>
+        <annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_0001082"/>
+        <annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An innate lyphoid cell with an immature phenotype.</annotatedTarget>
+        <oboInOwl:database_cross_reference rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GOC:add</oboInOwl:database_cross_reference>
     </Axiom>
     
 
@@ -860,6 +1325,10 @@
                     <Restriction>
                         <onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002104"/>
                         <someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PR_000008994"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002160"/>
+                        <someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_10090"/>
                     </Restriction>
                     <Restriction>
                         <onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002215"/>
@@ -916,6 +1385,8 @@
                 </intersectionOf>
             </Class>
         </equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://example.com/XCL_M2"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0001069"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A group 2 innate lymphoid cell in the mouse capable of secreting IL-13 in response to a helminth infection. This cell is lineage-negative, ICOS-positive, IL1RL1-positive, IL7Ralpha-positive, and IL17Br-positive.</obo:IAO_0000115>
         <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">tmeehan</oboInOwl:created_by>
         <oboInOwl:creation_date rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2010-08-12T02:22:19Z</oboInOwl:creation_date>
@@ -958,12 +1429,18 @@
                         <someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PR_000002065"/>
                     </Restriction>
                     <Restriction>
+                        <onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002160"/>
+                        <someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
+                    </Restriction>
+                    <Restriction>
                         <onProperty rdf:resource="http://purl.obolibrary.org/obo/cl#lacks_plasma_membrane_part"/>
                         <someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PR_000001003"/>
                     </Restriction>
                 </intersectionOf>
             </Class>
         </equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://example.com/XCL_H2"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000823"/>
         <rdfs:subClassOf>
             <Restriction>
                 <onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002202"/>
@@ -1008,6 +1485,10 @@
                         <someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PR_000009766"/>
                     </Restriction>
                     <Restriction>
+                        <onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002160"/>
+                        <someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
+                    </Restriction>
+                    <Restriction>
                         <onProperty rdf:resource="http://purl.obolibrary.org/obo/cl#has_high_plasma_membrane_amount"/>
                         <someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PR_000001024"/>
                     </Restriction>
@@ -1018,6 +1499,8 @@
                 </intersectionOf>
             </Class>
         </equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://example.com/XCL_H2"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000824"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A natural killer cell subset that is found in the decidual of the uterus and is CD56-high, Galectin-1-positive and CD16-negative. This cell type represents the most abundant immune cell type in the decidual during the first trimester of pregnancy.</obo:IAO_0000115>
         <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">tmeehan</oboInOwl:created_by>
         <oboInOwl:creation_date rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2010-09-20T04:00:02Z</oboInOwl:creation_date>
@@ -1056,6 +1539,10 @@
                         <someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PR_000002065"/>
                     </Restriction>
                     <Restriction>
+                        <onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002160"/>
+                        <someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
+                    </Restriction>
+                    <Restriction>
                         <onProperty rdf:resource="http://purl.obolibrary.org/obo/cl#lacks_plasma_membrane_part"/>
                         <someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PR_000001003"/>
                     </Restriction>
@@ -1066,6 +1553,8 @@
                 </intersectionOf>
             </Class>
         </equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://example.com/XCL_H2"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000823"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A natural killer cell that is developmentally immature, has the phenotype CD34-negative, CD56-negative, CD117-positive, CD122-positive,and CD161-positive.</obo:IAO_0000115>
         <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">tmeehan</oboInOwl:created_by>
         <oboInOwl:creation_date rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2010-09-20T04:33:11Z</oboInOwl:creation_date>
@@ -1112,6 +1601,10 @@
                         <someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PR_000009616"/>
                     </Restriction>
                     <Restriction>
+                        <onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002160"/>
+                        <someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_10090"/>
+                    </Restriction>
+                    <Restriction>
                         <onProperty rdf:resource="http://purl.obolibrary.org/obo/cl#has_low_plasma_membrane_amount"/>
                         <someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PR_000001012"/>
                     </Restriction>
@@ -1122,6 +1615,8 @@
                 </intersectionOf>
             </Class>
         </equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://example.com/XCL_M2"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000823"/>
         <rdfs:subClassOf>
             <Restriction>
                 <onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002202"/>
@@ -1159,12 +1654,18 @@
                         <someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PR_000002977"/>
                     </Restriction>
                     <Restriction>
+                        <onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002160"/>
+                        <someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_10090"/>
+                    </Restriction>
+                    <Restriction>
                         <onProperty rdf:resource="http://purl.obolibrary.org/obo/cl#lacks_plasma_membrane_part"/>
                         <someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PR_000001008"/>
                     </Restriction>
                 </intersectionOf>
             </Class>
         </equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://example.com/XCL_M2"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000823"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An immature natural killer cell that is NK1.1-positive and DX-5 negative.</obo:IAO_0000115>
         <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">tmeehan</oboInOwl:created_by>
         <oboInOwl:creation_date rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2010-09-21T10:11:44Z</oboInOwl:creation_date>
@@ -1342,6 +1843,7 @@
                 </intersectionOf>
             </Class>
         </equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0002438"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A mature natural killer cell that is CD11b-positive and CD27-positive.</obo:IAO_0000115>
         <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">tmeehan</oboInOwl:created_by>
         <oboInOwl:creation_date rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2010-10-25T03:07:59Z</oboInOwl:creation_date>
@@ -1377,6 +1879,8 @@
                 </intersectionOf>
             </Class>
         </equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://example.com/XCL_M2"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000824"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A mature NK cell that is NK1.1-positive.</obo:IAO_0000115>
         <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">tmeehan</oboInOwl:created_by>
         <oboInOwl:creation_date rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2010-10-25T03:18:04Z</oboInOwl:creation_date>
@@ -1413,6 +1917,7 @@
                 </intersectionOf>
             </Class>
         </equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0002438"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A NK1.1-positive T cell that is NKGA2-positive.</obo:IAO_0000115>
         <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">tmeehan</oboInOwl:created_by>
         <oboInOwl:creation_date rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2010-10-25T03:31:09Z</oboInOwl:creation_date>
@@ -1448,6 +1953,7 @@
                 </intersectionOf>
             </Class>
         </equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0002438"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A NK1.1-positive T cell that is Ly49D-positive.</obo:IAO_0000115>
         <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">tmeehan</oboInOwl:created_by>
         <oboInOwl:creation_date rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2010-10-25T03:36:19Z</oboInOwl:creation_date>
@@ -1483,6 +1989,7 @@
                 </intersectionOf>
             </Class>
         </equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0002438"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A NK1.1-positive T cell that is CD94-positive.</obo:IAO_0000115>
         <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">tmeehan</oboInOwl:created_by>
         <oboInOwl:creation_date rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2010-10-25T03:36:28Z</oboInOwl:creation_date>
@@ -1522,7 +2029,8 @@
                 </intersectionOf>
             </Class>
         </equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0002438"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0002446"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0002447"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A NK1.1-positive T cell that is CD94-negative and Ly49Cl-negative.</obo:IAO_0000115>
         <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">tmeehan</oboInOwl:created_by>
         <oboInOwl:creation_date rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2010-10-25T03:56:21Z</oboInOwl:creation_date>
@@ -1559,6 +2067,7 @@
                 </intersectionOf>
             </Class>
         </equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0002438"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A NK1.1-positive T cell that is Ly49Cl-positive.</obo:IAO_0000115>
         <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">tmeehan</oboInOwl:created_by>
         <oboInOwl:creation_date rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2010-10-25T03:36:38Z</oboInOwl:creation_date>
@@ -1595,6 +2104,7 @@
                 </intersectionOf>
             </Class>
         </equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0002438"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A NK1.1-positive T cell that is Ly49H-positive.</obo:IAO_0000115>
         <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">tmeehan</oboInOwl:created_by>
         <oboInOwl:creation_date rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2010-10-25T03:36:43Z</oboInOwl:creation_date>
@@ -1630,6 +2140,7 @@
                 </intersectionOf>
             </Class>
         </equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0002438"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A NK1.1-positive T cell that is Ly49D-negative.</obo:IAO_0000115>
         <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">tmeehan</oboInOwl:created_by>
         <oboInOwl:creation_date rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2010-10-25T03:39:02Z</oboInOwl:creation_date>
@@ -1665,6 +2176,7 @@
                 </intersectionOf>
             </Class>
         </equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0002438"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A NK1.1-positive T cell that is Ly49Cl-negative.</obo:IAO_0000115>
         <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">tmeehan</oboInOwl:created_by>
         <oboInOwl:creation_date rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2010-10-25T03:52:04Z</oboInOwl:creation_date>
@@ -1701,6 +2213,7 @@
                 </intersectionOf>
             </Class>
         </equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0002438"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A NK1.1-positive T cell that is CD94-negative.</obo:IAO_0000115>
         <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">tmeehan</oboInOwl:created_by>
         <oboInOwl:creation_date rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2010-10-25T03:54:18Z</oboInOwl:creation_date>
@@ -1736,6 +2249,7 @@
                 </intersectionOf>
             </Class>
         </equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0002438"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A NK1.1-positive T cell that is Ly49H-negative.</obo:IAO_0000115>
         <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">tmeehan</oboInOwl:created_by>
         <oboInOwl:creation_date rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2010-10-25T03:42:42Z</oboInOwl:creation_date>
@@ -1775,6 +2289,8 @@
                 </intersectionOf>
             </Class>
         </equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0002441"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0002443"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A NK1.1-positive T cell that is CD94-positive and Ly49Cl-positive.</obo:IAO_0000115>
         <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">tmeehan</oboInOwl:created_by>
         <oboInOwl:creation_date rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2010-10-25T03:56:27Z</oboInOwl:creation_date>
@@ -1865,6 +2381,7 @@
     <!-- http://purl.obolibrary.org/obo/GO_0008150 -->
 
     <Class rdf:about="http://purl.obolibrary.org/obo/GO_0008150">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">biological process</rdfs:label>
     </Class>
     
@@ -1927,6 +2444,7 @@
     <!-- http://purl.obolibrary.org/obo/GO_0044464 -->
 
     <Class rdf:about="http://purl.obolibrary.org/obo/GO_0044464">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cell part</rdfs:label>
     </Class>
     
@@ -1962,6 +2480,7 @@
     <!-- http://purl.obolibrary.org/obo/NCBITaxon_2759 -->
 
     <Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_2759">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Eukaryota</rdfs:label>
     </Class>
     
@@ -1988,6 +2507,7 @@
     <!-- http://purl.obolibrary.org/obo/PATO_0001501 -->
 
     <Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001501">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">immature</rdfs:label>
     </Class>
     
@@ -1996,6 +2516,7 @@
     <!-- http://purl.obolibrary.org/obo/PR_000000001 -->
 
     <Class rdf:about="http://purl.obolibrary.org/obo/PR_000000001">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">protein</rdfs:label>
     </Class>
     
@@ -2307,9 +2828,118 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/PR_O76036 -->
+
+    <Class rdf:about="http://purl.obolibrary.org/obo/PR_O76036">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000000001"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">natural cytotoxicity triggering receptor 1 (human)</rdfs:label>
+    </Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PR_O95944 -->
+
+    <Class rdf:about="http://purl.obolibrary.org/obo/PR_O95944">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000000001"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">natural cytotoxicity triggering receptor 2 (human)</rdfs:label>
+    </Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PR_P01589 -->
+
+    <Class rdf:about="http://purl.obolibrary.org/obo/PR_P01589">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000000001"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">interleukin-2 receptor subunit alpha (human)</rdfs:label>
+    </Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PR_P10721 -->
+
+    <Class rdf:about="http://purl.obolibrary.org/obo/PR_P10721">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000000001"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">mast/stem cell growth factor receptor Kit (human)</rdfs:label>
+    </Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PR_P13591 -->
+
+    <Class rdf:about="http://purl.obolibrary.org/obo/PR_P13591">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000000001"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">neural cell adhesion molecule 1 (human)</rdfs:label>
+    </Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PR_P16871 -->
+
+    <Class rdf:about="http://purl.obolibrary.org/obo/PR_P16871">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000000001"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">interleukin-7 receptor subunit alpha (human)</rdfs:label>
+    </Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PR_P23771 -->
+
+    <Class rdf:about="http://purl.obolibrary.org/obo/PR_P23771">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000000001"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">trans-acting T-cell-specific transcription factor GATA-3 (human)</rdfs:label>
+    </Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PR_P28906 -->
+
+    <Class rdf:about="http://purl.obolibrary.org/obo/PR_P28906">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000000001"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hematopoietic progenitor cell antigen CD34 (human)</rdfs:label>
+    </Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PR_Q07108 -->
+
+    <Class rdf:about="http://purl.obolibrary.org/obo/PR_Q07108">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000000001"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">early activation antigen CD69 (human)</rdfs:label>
+    </Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PR_Q12918 -->
+
+    <Class rdf:about="http://purl.obolibrary.org/obo/PR_Q12918">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000000001"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">killer cell lectin-like receptor subfamily B member 1 (human)</rdfs:label>
+    </Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PR_Q96E93 -->
+
+    <Class rdf:about="http://purl.obolibrary.org/obo/PR_Q96E93">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000000001"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">killer cell lectin-like receptor subfamily G member 1 (human)</rdfs:label>
+    </Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PR_Q9UL17 -->
+
+    <Class rdf:about="http://purl.obolibrary.org/obo/PR_Q9UL17">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000000001"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">T-box transcription factor TBX21 (human)</rdfs:label>
+    </Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/UBERON_0001062 -->
 
     <Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0001062">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">anatomical entity</rdfs:label>
     </Class>
     

@@ -82,3 +82,15 @@ PR:000009623	killer cell lectin-like receptor 8	owl:Class	protein
 PR:000009766	galectin-1	owl:Class	protein	
 UBERON:0001062	anatomical entity	owl:Class		
 UBERON:0001281	hepatic sinusoid	owl:Class	anatomical entity	
+PR:Q96E93	killer cell lectin-like receptor subfamily G member 1 (human)	owl:Class	protein	
+PR:O76036	natural cytotoxicity triggering receptor 1 (human)	owl:Class	protein	
+PR:P16871	interleukin-7 receptor subunit alpha (human)	owl:Class	protein	
+PR:P28906	hematopoietic progenitor cell antigen CD34 (human)	owl:Class	protein	
+PR:P13591	neural cell adhesion molecule 1 (human)	owl:Class	protein	
+PR:P10721	mast/stem cell growth factor receptor Kit (human)	owl:Class	protein	
+PR:Q9UL17	T-box transcription factor TBX21 (human)	owl:Class	protein	
+PR:Q07108	early activation antigen CD69 (human)	owl:Class	protein	
+PR:O95944	natural cytotoxicity triggering receptor 2 (human)	owl:Class	protein	
+PR:P01589	interleukin-2 receptor subunit alpha (human)	owl:Class	protein	
+PR:Q12918	killer cell lectin-like receptor subfamily B member 1 (human)	owl:Class	protein	
+PR:P23771	trans-acting T-cell-specific transcription factor GATA-3 (human)	owl:Class	protein	

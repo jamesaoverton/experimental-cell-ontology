@@ -13,6 +13,15 @@
 # - GNU Make
 # - ROBOT <http://github.com/ontodev/robot>
 
+### Workflow
+#
+# 1. Edit the [Google Sheet](https://docs.google.com/spreadsheets/d/1Ja1IYLWygg3k-beGPRg_uza_8-FPBLzF90WbHkbCi4Q)
+# 2. Run [Update](update) to fetch the latest data, validate it, and rebuild
+# 3. View the validation results:
+#     - [General](build/general.html) (not species-specific) cell types ([general.xlsx](build/general.xlsx))
+#     - [Human](build/human.html) cell types ([human.xlsx](build/human.xlsx))
+#     - [Mouse](build/mouse.html) cell types ([general.xlsx](build/general.xlsx))
+# 4. If the tables were valid, then [view the tree](build/xcl.html) ([xcl.owl](xcl.owl))
 
 ### Configuration
 #
@@ -31,6 +40,47 @@ OBO = http://purl.obolibrary.org/obo
 LIB = lib
 ROBOT := java -jar build/robot.jar
 
+GENERAL := build/general.html build/general.xlsx
+$(GENERAL): xcl.owl build/general.tsv | build/robot.jar
+	$(ROBOT) validate \
+	--input $< \
+	--table $(word 2,$^) \
+	--format $(subst .,,$(suffix $(notdir $@))) \
+	--standalone true \
+	--output-dir $(dir $@)
+
+HUMAN := build/human.html build/human.xlsx
+$(HUMAN): xcl.owl build/human.tsv | build/robot.jar
+	$(ROBOT) validate \
+	--input $< \
+	--table $(word 2,$^) \
+	--format $(subst .,,$(suffix $(notdir $@))) \
+	--standalone true \
+	--output-dir $(dir $@)
+
+MOUSE := build/mouse.html build/mouse.xlsx
+$(MOUSE): xcl.owl build/mouse.tsv | build/robot.jar
+	$(ROBOT) validate \
+	--input $< \
+	--table $(word 2,$^) \
+	--format $(subst .,,$(suffix $(notdir $@))) \
+	--standalone true \
+	--output-dir $(dir $@)
+
+TREES := build/xcl.html xcl.owl
+build/xcl.html: xcl.owl | build/robot-tree.jar
+	java -jar build/robot-tree.jar tree \
+	--input $< \
+	--tree $@
+	mv $@ $@.tmp
+	sed "s/params.get('text')/params.get('text') || 'cell'/" $@.tmp > $@
+	rm $@.tmp
+
+.PHONY: update
+update:
+	rm -rf $(GENERAL) $(HUMAN) $(MOUSE) $(TREES)
+	make $(GENERAL) $(HUMAN) $(MOUSE) $(TREES)
+
 
 ### Set Up
 
@@ -48,6 +98,9 @@ ontology:
 build/robot.jar: | build
 	curl -L -o $@ https://github.com/ontodev/robot/releases/download/v1.4.3/robot.jar
 
+build/robot-tree.jar: | build
+	curl -L -o $@ https://build.obolibrary.io/job/ontodev/job/robot/job/tree-view/lastSuccessfulBuild/artifact/bin/robot.jar
+
 
 ### Ontology Source Tables
 
@@ -64,6 +117,9 @@ build/XCL_Template.xlsx: | build
 
 ontology/%.tsv: src/xlsx2tsv.py build/XCL_Template.xlsx
 	python3 $^ $* > $@
+
+build/%.tsv: ontology/%.tsv
+	sed '/LABEL/d' $^ | grep "\S" > $@
 
 build/cl.owl:
 	curl -L -o $@ "http://purl.obolibrary.org/obo/cl.owl"
@@ -83,7 +139,7 @@ xcl.owl: ontology/metadata.ttl $(source_files) | build/robot.jar
 	--prefix "XCL: http://example.com/XCL_" \
 	--input $< \
 	$(templates) \
-	--output $@
+	reason --output $@
 
 .PHONY: update
 update: clean-data xcl.owl
@@ -103,4 +159,3 @@ clobber: clean
 
 .PHONY: all
 all: xcl.owl
-
