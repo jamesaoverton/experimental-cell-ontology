@@ -17,11 +17,14 @@
 #
 # 1. Edit the [Google Sheet](https://docs.google.com/spreadsheets/d/1Ja1IYLWygg3k-beGPRg_uza_8-FPBLzF90WbHkbCi4Q)
 # 2. Run [Update](update) to fetch the latest data, validate it, and rebuild
-# 3. View the validation results:
+# 3. View the validation result tables:
 #     - [General](build/general.html) (not species-specific) cell types ([general.xlsx](build/general.xlsx))
 #     - [Human](build/human.html) cell types ([human.xlsx](build/human.xlsx))
 #     - [Mouse](build/mouse.html) cell types ([general.xlsx](build/general.xlsx))
-# 4. If the tables were valid, then [view the tree](build/xcl.html) ([xcl.owl](xcl.owl))
+# 4. If the tables were valid, then view the resulting trees:
+#     - [General](build/xcl.html) tree ([xcl.owl](xcl.owl))
+#     - [Human](build/human-tree.html) tree ([human-tree.owl](build/human-tree.owl))
+#     - [Mouse](build/mouse-tree.html) tree ([mouse-tree.owl](build/mouse-tree.owl))
 
 ### Configuration
 #
@@ -67,7 +70,36 @@ $(MOUSE): xcl.owl build/mouse.tsv | build/robot.jar
 	--standalone true \
 	--output-dir $(dir $@)
 
-TREES := build/xcl.html xcl.owl
+build/human-tree.owl: xcl.owl | build/robot.jar
+	$(ROBOT) remove \
+	--input $^ \
+	--term 'http://example.com/XCL_M1' \
+	--select 'self descendants' \
+	remove \
+	--term 'http://example.com/XCL_H1' \
+	--term 'http://example.com/XCL_H2' \
+	reduce \
+	--output $@
+
+build/mouse-tree.owl: xcl.owl | build/robot.jar
+	$(ROBOT) remove \
+	--input $^ \
+	--term 'http://example.com/XCL_H1' \
+	--select 'self descendants' \
+	remove \
+	--term 'http://example.com/XCL_M1' \
+	--term 'http://example.com/XCL_M2' \
+	reduce \
+	--output $@
+
+build/%-tree.html: build/%-tree.owl | build/robot-tree.jar
+	java -jar build/robot-tree.jar tree \
+	--input $< \
+	--tree $@
+	mv $@ $@.tmp
+	sed "s/params.get('text')/params.get('text') || 'cell'/" $@.tmp > $@
+	rm $@.tmp
+
 build/xcl.html: xcl.owl | build/robot-tree.jar
 	java -jar build/robot-tree.jar tree \
 	--input $< \
@@ -75,6 +107,8 @@ build/xcl.html: xcl.owl | build/robot-tree.jar
 	mv $@ $@.tmp
 	sed "s/params.get('text')/params.get('text') || 'cell'/" $@.tmp > $@
 	rm $@.tmp
+
+TREES := xcl.owl build/xcl.html build/human-tree.owl build/human-tree.html build/mouse-tree.owl build/mouse-tree.html
 
 .PHONY: update
 update:
