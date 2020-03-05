@@ -25,7 +25,7 @@ for row in ws:
     if cell.value is None:
       values.append('')
     else:
-      values.append(str(cell.value))
+      values.append(str(cell.value).strip())
 
   if rownum == 1:
     for value in values:

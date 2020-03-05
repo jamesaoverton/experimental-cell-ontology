@@ -15,16 +15,12 @@
 
 ### Workflow
 #
-# 1. Edit the [Google Sheet](https://docs.google.com/spreadsheets/d/1Ja1IYLWygg3k-beGPRg_uza_8-FPBLzF90WbHkbCi4Q)
+# 1. Edit the [Google Sheet](https://docs.google.com/spreadsheets/d/1U-NwYVT624ve8zNZeNU0sx9woFvVWgRp_FZt1oALkGQ)
 # 2. Run [Update](update) to fetch the latest data, validate it, and rebuild
 # 3. View the validation result tables:
 #     - [General](build/general.html) (not species-specific) cell types ([general.xlsx](build/general.xlsx))
-#     - [Human](build/human.html) cell types ([human.xlsx](build/human.xlsx))
-#     - [Mouse](build/mouse.html) cell types ([general.xlsx](build/general.xlsx))
 # 4. If the tables were valid, then view the resulting trees:
 #     - [General](build/xcl.html) tree ([xcl.owl](xcl.owl))
-#     - [Human](build/human-tree.html) tree ([human-tree.owl](build/human-tree.owl))
-#     - [Mouse](build/mouse-tree.html) tree ([mouse-tree.owl](build/mouse-tree.owl))
 
 ### Configuration
 #
@@ -108,12 +104,12 @@ build/xcl.html: xcl.owl | build/robot-tree.jar
 	sed "s/params.get('text')/params.get('text') || 'cell'/" $@.tmp > $@
 	rm $@.tmp
 
-TREES := xcl.owl build/xcl.html build/human-tree.owl build/human-tree.html build/mouse-tree.owl build/mouse-tree.html
+TREES := xcl.owl build/xcl.html
 
 .PHONY: update
 update:
-	rm -rf $(GENERAL) $(HUMAN) $(MOUSE) $(TREES)
-	make $(GENERAL) $(HUMAN) $(MOUSE) $(TREES)
+	rm -rf $(GENERAL) $(TREES)
+	make $(GENERAL) $(TREES)
 
 
 ### Set Up
@@ -130,7 +126,7 @@ ontology:
 # We use the official development version of ROBOT for most things.
 
 build/robot.jar: | build
-	curl -L -o $@ https://github.com/ontodev/robot/releases/download/v1.4.3/robot.jar
+	curl -L -o $@ https://build.obolibrary.io/job/ontodev/job/robot/job/validate/lastSuccessfulBuild/artifact/bin/robot.jar
 
 build/robot-tree.jar: | build
 	curl -L -o $@ https://build.obolibrary.io/job/ontodev/job/robot/job/tree-view/lastSuccessfulBuild/artifact/bin/robot.jar
@@ -138,7 +134,7 @@ build/robot-tree.jar: | build
 
 ### Ontology Source Tables
 
-tables = dependencies general human mouse
+tables = dependencies general
 source_files = $(foreach o,$(tables),ontology/$(o).tsv)
 templates = $(foreach i,$(source_files),--template $(i))
 
@@ -147,7 +143,7 @@ templates = $(foreach i,$(source_files),--template $(i))
 # These tables are stored in Google Sheets, and downloaded as TSV files.
 
 build/XCL_Template.xlsx: | build
-	curl -L -o $@ "https://docs.google.com/spreadsheets/d/1Ja1IYLWygg3k-beGPRg_uza_8-FPBLzF90WbHkbCi4Q/export?format=xlsx"
+	curl -L -o $@ "https://docs.google.com/spreadsheets/d/1U-NwYVT624ve8zNZeNU0sx9woFvVWgRp_FZt1oALkGQ/export?format=xlsx"
 
 ontology/%.tsv: src/xlsx2tsv.py build/XCL_Template.xlsx
 	python3 $^ $* > $@
@@ -173,7 +169,7 @@ xcl.owl: ontology/metadata.ttl $(source_files) | build/robot.jar
 	--prefix "XCL: http://example.com/XCL_" \
 	--input $< \
 	$(templates) \
-	reason --output $@
+	reason --reasoner HermiT --output $@
 
 .PHONY: update
 update: clean-data xcl.owl

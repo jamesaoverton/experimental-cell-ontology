@@ -1,13 +1,7 @@
 ID	Label	Type	Parent Class	Parent Property
 ID	A label	TYPE	C %	P %
-oboInOwl:has_obo_namespace	has_obo_namespace	owl:AnnotationProperty		
-oboInOwl:has_exact_synonym	has_exact_synonym	owl:AnnotationProperty		
-oboInOwl:database_cross_reference	database_cross_reference	owl:AnnotationProperty		
-oboInOwl:has_broad_synonym	has_broad_synonym	owl:AnnotationProperty		
-oboInOwl:has_related_synonym	has_related_synonym	owl:AnnotationProperty		
-oboInOwl:created_by	created_by	owl:AnnotationProperty		
-oboInOwl:creation_date	creation_date	owl:AnnotationProperty		
 IAO:0000115	definition	owl:AnnotationProperty		
+BFO:0000050	part of	owl:ObjectProperty		
 BFO:0000051	has part	owl:ObjectProperty		
 RO:0002104	has plasma membrane part	owl:ObjectProperty		has part
 http://purl.obolibrary.org/obo/cl#lacks_plasma_membrane_part	lacks_plasma_membrane_part	owl:ObjectProperty		
@@ -20,20 +14,21 @@ RO:0002162	in taxon	owl:ObjectProperty
 RO:0002160	only in taxon	owl:ObjectProperty		in taxon
 RO:0002215	capable of	owl:ObjectProperty		
 http://purl.obolibrary.org/obo/cl#lacks_part	lacks part	owl:ObjectProperty		
-NCBITaxon:2759	Eukaryota	owl:Class		
+BFO:0000040	material entity	owl:Class		
+OBI:0100026	organism	owl:Class	material entity	
+XCL:multicellular-organism	multicellular organism	owl:Class	organism	
+XCL:prokaryota	Prokaryota	owl:Class	organism	
+NCBITaxon:2759	Eukaryota	owl:Class	organism	
 NCBITaxon:33208	Metazoa	owl:Class	Eukaryota	
 NCBITaxon:9606	Homo sapiens	owl:Class	Metazoa	
 NCBITaxon:10090	Mus musculus	owl:Class	Metazoa	
-GO:0044464	cell part	owl:Class		
-GO:0030141	secretory granule	owl:Class	cell part	
-CP:0000000	neutrophillic cytoplasm	owl:Class	cell part	
-CP:0000037	increased nucleus size	owl:Class	cell part	
-GO:0000792	heterochromatin	owl:Class	cell part	
-GO:0042105	alpha-beta T cell receptor complex	owl:Class	cell part	
-CL:0000000	cell	owl:Class		
-CL:0000542	lymphocyte	owl:Class	cell	
-CL:0000825	pro-NK cell	owl:Class	cell	
-GO:0008150	biological process	owl:Class		
+NCBITaxon:33090	Viridiplantae	owl:Class	Eukaryota	
+GO:0044464	cell part	owl:Class	material entity	
+GO:0005634	nucleus	owl:Class	cell part	
+BFO:0000115	process	owl:Class		
+GO:0008150	biological process	owl:Class	process	
+GO:0048609	multicellular organismal reproductive process	owl:Class	biological process	
+GO:0015979	photosynthesis	owl:Class	biological process	
 GO:0001816	cytokine production	owl:Class	biological process	
 GO:0001909	leukocyte mediated cytotoxicity	owl:Class	biological process	
 GO:0002228	natural killer cell mediated immunity	owl:Class	biological process	
@@ -44,8 +39,7 @@ GO:0032634	interleukin-5 production	owl:Class	biological process
 GO:0042267	natural killer cell mediated cytotoxicity	owl:Class	biological process	
 GO:0045087	innate immune response	owl:Class	biological process	
 GO:0050776	regulation of immune response	owl:Class	biological process	
-PATO:0001501	immature	owl:Class		
-PR:000000001	protein	owl:Class		
+PR:000000001	protein	owl:Class	material entity	
 PR:000001002	CD19 molecule	owl:Class	protein	
 PR:000001003	CD34 molecule	owl:Class	protein	
 PR:000001004	CD4 molecule	owl:Class	protein	
@@ -80,8 +74,9 @@ PR:000009618	killer cell lectin-like receptor 3	owl:Class	protein
 PR:000009619	killer cell lectin-like receptor 4	owl:Class	protein	
 PR:000009623	killer cell lectin-like receptor 8	owl:Class	protein	
 PR:000009766	galectin-1	owl:Class	protein	
-UBERON:0001062	anatomical entity	owl:Class		
-UBERON:0001281	hepatic sinusoid	owl:Class	anatomical entity	
+UBERON:0000465	material anatomical entity	owl:Class	material entity	
+UBERON:0000483	epithelium	owl:Class	material anatomical entity	
+UBERON:0007100	primary circulatory organ	owl:Class	material anatomical entity	
 PR:Q96E93	killer cell lectin-like receptor subfamily G member 1 (human)	owl:Class	protein	
 PR:O76036	natural cytotoxicity triggering receptor 1 (human)	owl:Class	protein	
 PR:P16871	interleukin-7 receptor subunit alpha (human)	owl:Class	protein	
