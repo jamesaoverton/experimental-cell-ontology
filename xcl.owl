@@ -65,6 +65,14 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/RO_0000086 -->
+
+    <ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0000086">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has quality</rdfs:label>
+    </ObjectProperty>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/RO_0001025 -->
 
     <ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0001025">
@@ -157,6 +165,28 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
+    
+
+
+    <!-- http://example.com/XCL_BP1 -->
+
+    <Class rdf:about="http://example.com/XCL_BP1">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000000"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0100026"/>
+        <rdfs:subClassOf>
+            <Class>
+                <intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0100026"/>
+                    <Restriction>
+                        <onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000086"/>
+                        <someValuesFrom rdf:resource="http://example.com/XCL_obligate-unicellular"/>
+                    </Restriction>
+                </intersectionOf>
+            </Class>
+        </rdfs:subClassOf>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Are these just NCBI Taxa?</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">single cell organism</rdfs:label>
+    </Class>
     
 
 
@@ -377,11 +407,29 @@
     
 
 
+    <!-- http://example.com/XCL_obligate-unicellular -->
+
+    <Class rdf:about="http://example.com/XCL_obligate-unicellular">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000019"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">obligate unicellular</rdfs:label>
+    </Class>
+    
+
+
     <!-- http://example.com/XCL_prokaryota -->
 
     <Class rdf:about="http://example.com/XCL_prokaryota">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0100026"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Prokaryota</rdfs:label>
+    </Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000019 -->
+
+    <Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000019">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">quality</rdfs:label>
     </Class>
     
 
@@ -404,10 +452,19 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/CL_0000000 -->
+
+    <Class rdf:about="http://purl.obolibrary.org/obo/CL_0000000">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cell</rdfs:label>
+    </Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/CL_0000003 -->
 
     <Class rdf:about="http://purl.obolibrary.org/obo/CL_0000003">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000000"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">native cell</rdfs:label>
     </Class>
     

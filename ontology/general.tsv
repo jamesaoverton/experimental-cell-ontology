@@ -1,14 +1,14 @@
 ID	Label	Definition	Comment	Class Type	Parent	In Taxon	Part Of	Capable Of	Has Part	Does Not Have Part	Has Plasma Membrane Part	Lacks Plasma Membrane Part	High Amount	Low Amount	Develops From	Other Axioms
 ID	LABEL	A definition	A rdfs:comment	CLASS_TYPE	C % SPLIT=|	C 'in taxon' some %	C 'part of' some %	C 'capable of' some % SPLIT=|	C 'has part' some %	C 'lacks part' some %	C 'has plasma membrane part' some % SPLIT=|	C lacks_plasma_membrane_part some % SPLIT=|	C has_high_plasma_membrane_amount some % SPLIT=|	C has_low_plasma_membrane_amount some % SPLIT=|	SC 'develops from' some %	C % SPLIT=|
-					is-required true; subclass-of 'cell'	subclass-of Organism	subclass-of 'material anatomical entity'									
-CL:0000003	native cell			subclass	material entity											
+					is-required true											
+CL:0000003	native cell			subclass	cell											
 XCL:OS1	cell from organism in characteristic taxon			equivalent	native cell	organism										
 CL:0000520	Prokaryotic cell			equivalent	native cell	Prokaryota										
 CL:0000255	Eukaryotic cell			equivalent	native cell	Eukaryota										
 XCL:OS2	animal cell			equivalent	native cell	Metazoa										
 XCL:OS3	plant cell			equivalent	native cell	Viridiplantae										
 XCL:OS4	cell from obligate single cell Eukaryote			subclass	native cell											
-	single cell organism		Are these just NCBI Taxa?													
+XCL:BP1	single cell organism		Are these just NCBI Taxa?	subclass	'organism' and 'has quality' some 'obligate unicellular' | cell											
 	Prokaryotic cell		Are these just NCBI Taxa?													
 	cell from obligate single cell Eukaryote		Are these just NCBI Taxa?													
 XCL:OS8	cell from multicellular organism			equivalent	native cell		multicellular organism									

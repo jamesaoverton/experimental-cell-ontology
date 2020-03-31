@@ -7,6 +7,7 @@ RO:0002104	has plasma membrane part	owl:ObjectProperty		has part
 http://purl.obolibrary.org/obo/cl#lacks_plasma_membrane_part	lacks_plasma_membrane_part	owl:ObjectProperty		
 http://purl.obolibrary.org/obo/cl#has_high_plasma_membrane_amount	has_high_plasma_membrane_amount	owl:ObjectProperty		has plasma membrane part
 http://purl.obolibrary.org/obo/cl#has_low_plasma_membrane_amount	has_low_plasma_membrane_amount	owl:ObjectProperty		has plasma membrane part
+RO:0000086	has quality	owl:ObjectProperty		
 RO:0000053	bearer of	owl:ObjectProperty		
 RO:0001025	located in	owl:ObjectProperty		
 RO:0002202	develops from	owl:ObjectProperty		
@@ -14,7 +15,10 @@ RO:0002162	in taxon	owl:ObjectProperty
 RO:0002160	only in taxon	owl:ObjectProperty		in taxon
 RO:0002215	capable of	owl:ObjectProperty		
 http://purl.obolibrary.org/obo/cl#lacks_part	lacks part	owl:ObjectProperty		
+BFO:0000019	quality	owl:Class		
+XCL:obligate-unicellular	obligate unicellular	owl:Class	quality	
 BFO:0000040	material entity	owl:Class		
+CL:0000000	cell	owl:Class	material entity	
 OBI:0100026	organism	owl:Class	material entity	
 XCL:multicellular-organism	multicellular organism	owl:Class	organism	
 XCL:prokaryota	Prokaryota	owl:Class	organism	
