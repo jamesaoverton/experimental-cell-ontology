@@ -21,6 +21,7 @@
 #     - [General](build/general.html) (not species-specific) cell types ([general.xlsx](build/general.xlsx))
 # 4. If the tables were valid, then view the resulting trees:
 #     - [General](build/xcl.html) tree ([xcl.owl](xcl.owl))
+# 5. [OBO Taxonomy](build/obo-taxonomy-tree.html) ([obo-taxonomy.owl](build/obo-taxonomy.owl))
 
 ### Configuration
 #
@@ -40,8 +41,8 @@ LIB = lib
 ROBOT := java -jar build/robot.jar
 
 GENERAL := build/general.html build/general.xlsx
-$(GENERAL): xcl.owl build/general.tsv | build/robot.jar
-	$(ROBOT) validate \
+$(GENERAL): xcl.owl build/general.tsv | build/robot-validate.jar
+	java -jar build/robot-validate.jar validate \
 	--input $< \
 	--table $(word 2,$^) \
 	--format $(subst .,,$(suffix $(notdir $@))) \
@@ -49,8 +50,8 @@ $(GENERAL): xcl.owl build/general.tsv | build/robot.jar
 	--output-dir $(dir $@)
 
 HUMAN := build/human.html build/human.xlsx
-$(HUMAN): xcl.owl build/human.tsv | build/robot.jar
-	$(ROBOT) validate \
+$(HUMAN): xcl.owl build/human.tsv | build/robot-validate.jar
+	java -jar build/robot-validate.jar validate \
 	--input $< \
 	--table $(word 2,$^) \
 	--format $(subst .,,$(suffix $(notdir $@))) \
@@ -58,8 +59,8 @@ $(HUMAN): xcl.owl build/human.tsv | build/robot.jar
 	--output-dir $(dir $@)
 
 MOUSE := build/mouse.html build/mouse.xlsx
-$(MOUSE): xcl.owl build/mouse.tsv | build/robot.jar
-	$(ROBOT) validate \
+$(MOUSE): xcl.owl build/mouse.tsv | build/robot-validate.jar
+	java -jar build/robot-validate.jar validate \
 	--input $< \
 	--table $(word 2,$^) \
 	--format $(subst .,,$(suffix $(notdir $@))) \
@@ -126,10 +127,16 @@ ontology:
 # We use the official development version of ROBOT for most things.
 
 build/robot.jar: | build
+	curl -L -o $@ https://build.obolibrary.io/job/ontodev/job/robot/job/master/lastSuccessfulBuild/artifact/bin/robot.jar
+
+build/robot-validate.jar: | build
 	curl -L -o $@ https://build.obolibrary.io/job/ontodev/job/robot/job/validate/lastSuccessfulBuild/artifact/bin/robot.jar
 
 build/robot-tree.jar: | build
 	curl -L -o $@ https://build.obolibrary.io/job/ontodev/job/robot/job/tree-view/lastSuccessfulBuild/artifact/bin/robot.jar
+
+build/robot-rdfxml.jar: | build
+	curl -Lk -o $@ https://build.obolibrary.io/job/ontodev/job/robot/job/mireot-rdfxml/lastSuccessfulBuild/artifact/bin/robot.jar
 
 
 ### Ontology Source Tables
@@ -170,6 +177,51 @@ xcl.owl: ontology/metadata.ttl $(source_files) | build/robot.jar
 	--input $< \
 	$(templates) \
 	reason --reasoner HermiT --output $@
+
+
+### OBO Taxonomy Tree
+
+build/obo-taxonomy.csv: in-taxon.rq | build
+	curl -o $@ -X POST -F format=text/csv -F query=@$< 'http://sparql.hegroup.org/sparql/'
+
+build/obo-taxonomy.txt: build/obo-taxonomy.csv
+	sed /merged.PR/d $< | tail -n+2 | cut -d, -f3 | grep NCBITaxon \
+	| sed s/\"//g | sed s!http://purl.obolibrary.org/obo/NCBITaxon_!NCBITaxon:! > $@
+	echo 'NCBITaxon:33090' >> $@
+	echo 'NCBITaxon:33208' >> $@
+	echo 'NCBITaxon:4751' >> $@
+	mv $@ $@.tmp
+	sort $@.tmp | uniq > $@
+	rm $@.tmp
+
+build/ncbitaxon.owl.gz: | build
+	curl -L http://purl.obolibrary.org/obo/ncbitaxon.owl | gzip > $@
+
+build/obo-taxonomy.owl: build/ncbitaxon.owl.gz build/obo-taxonomy.txt | build/robot-rdfxml.jar
+	java -jar build/robot-rdfxml.jar extract \
+	--method rdfxml \
+	--input $< \
+	--term-file $(word 2,$^) \
+	collapse \
+	--precious-terms $(word 2,$^) \
+	--output $@
+
+build/obo-taxonomy.tsv: build/obo-taxonomy.owl build/obo-taxonomy.txt | build/robot.jar
+	$(ROBOT) filter \
+	--input $< \
+	--term-file $(word 2,$^) \
+	--select annotations \
+	export \
+	--header "ID|LABEL" \
+	--export $@
+
+build/obo-taxonomy-tree.html: build/obo-taxonomy.owl | build/robot-tree.jar
+	java -jar build/robot-tree.jar tree \
+	--input $< \
+	--tree $@
+
+
+### General Tasks
 
 .PHONY: update
 update: clean-data xcl.owl
