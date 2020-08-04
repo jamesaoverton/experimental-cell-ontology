@@ -35,18 +35,18 @@ for row in ws:
 
   if args.sheet == 'human':
     if rownum == 1:
-      values.insert(colnum, 'Only In Taxon')
+      values.insert(colnum, 'In Taxon')
     elif rownum == 2:
-      values.insert(colnum, "C 'only in taxon' some %")
+      values.insert(colnum, "C 'in taxon' some %")
     elif rownum == 3:
       values.insert(colnum, '')
     else:
       values.insert(colnum, 'Homo sapiens')
   elif args.sheet == 'mouse':
     if rownum == 1:
-      values.insert(colnum, 'Only In Taxon')
+      values.insert(colnum, 'In Taxon')
     elif rownum == 2:
-      values.insert(colnum, "C 'only in taxon' some %")
+      values.insert(colnum, "C 'in taxon' some %")
     elif rownum == 3:
       values.insert(colnum, '')
     else:

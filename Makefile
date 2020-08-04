@@ -102,6 +102,8 @@ build/%-tree.html: build/%-tree.owl | build/robot-tree.jar
 
 build/xcl.html: xcl.owl | build/robot-tree.jar
 	java -jar build/robot-tree.jar tree \
+	--prefix "CP: http://purl.obolibrary.org/obo/CP_" \
+	--prefix "XCL: http://example.com/XCL_" \
 	--input $< \
 	--tree $@
 	mv $@ $@.tmp
@@ -128,6 +130,7 @@ ontology:
 ### ROBOT
 #
 # We use the official development version of ROBOT for most things.
+# TODO: We actually need a development version of ROBOT for the validate tasks.
 
 build/robot.jar: | build
 	curl -L -o $@ https://github.com/ontodev/robot/releases/download/v1.4.3/robot.jar
@@ -170,6 +173,7 @@ build/ancestors.owl: build/cl.owl xcl.owl | build/robot.jar
 # TODO: Fix XCL prefix
 xcl.owl: ontology/metadata.ttl $(source_files) | build/robot.jar
 	$(ROBOT) template \
+	--prefix "CP: http://purl.obolibrary.org/obo/CP_" \
 	--prefix "XCL: http://example.com/XCL_" \
 	--input $< \
 	$(templates) \

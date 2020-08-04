@@ -2,3 +2,4 @@
 build/
 junk/
 shell.nix
+.git-credentials
